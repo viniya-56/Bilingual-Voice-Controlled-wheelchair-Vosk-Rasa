@@ -1,0 +1,9 @@
+{
+  "0": "move_backward",
+  "1": "move_forward",
+  "2": "slow_down",
+  "3": "speed_up",
+  "4": "stop",
+  "5": "turn_left",
+  "6": "turn_right"
+}

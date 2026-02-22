@@ -1,0 +1,60 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "back": 0,
+        "move_backward": 1,
+        "move_forward": 2,
+        "nlu_fallback": 3,
+        "out_of_scope": 4,
+        "restart": 5,
+        "session_start": 6,
+        "slow_down": 7,
+        "small_move_backward": 8,
+        "small_move_forward": 9,
+        "small_rotation_left": 10,
+        "small_rotation_right": 11,
+        "speed_up": 12,
+        "stop": 13,
+        "turn_left": 14,
+        "turn_right": 15
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_goodbye": 13,
+        "utter_iamabot": 14,
+        "utter_move_backward": 15,
+        "utter_move_forward": 16,
+        "utter_slow_down": 17,
+        "utter_small_move_backward": 18,
+        "utter_small_move_forward": 19,
+        "utter_small_rotation_left": 20,
+        "utter_small_rotation_right": 21,
+        "utter_speed_up": 22,
+        "utter_stop": 23,
+        "utter_turn_left": 24,
+        "utter_turn_right": 25
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": null
+}

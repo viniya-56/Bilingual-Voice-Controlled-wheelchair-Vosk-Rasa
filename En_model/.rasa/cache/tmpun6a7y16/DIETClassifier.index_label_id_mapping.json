@@ -1,0 +1,13 @@
+{
+  "0": "move_backward",
+  "1": "move_forward",
+  "2": "slow_down",
+  "3": "small_move_backward",
+  "4": "small_move_forward",
+  "5": "small_rotation_left",
+  "6": "small_rotation_right",
+  "7": "speed_up",
+  "8": "stop",
+  "9": "turn_left",
+  "10": "turn_right"
+}

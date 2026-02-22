@@ -1,0 +1,65 @@
+version: "3.1"
+
+nlu:
+- intent: move_forward
+  examples: |
+    - move forward
+    - go straight
+    - keep going
+    - hey wheelchair, can you please move ahead?
+    - could you go forward please?
+    - I want you to move forward
+
+- intent: move_backward
+  examples: |
+    - move back
+    - go backward
+    - reverse
+    - can you reverse a bit?
+    - I need you to move back
+    - please go in reverse, wheelchair
+
+- intent: turn_left
+  examples: |
+    - turn left
+    - go left
+    - move to the left
+    - I want to turn to the left
+    - please take a left
+    - hey, can you turn left now?
+
+- intent: turn_right
+  examples: |
+    - turn right
+    - go right
+    - move to the right
+    - can you take a right turn?
+    - please turn to your right
+    - I would like to go right
+
+- intent: stop
+  examples: |
+    - stop
+    - halt
+    - freeze
+    - stop right there
+    - could you please stop?
+    - hey wheelchair, just stop now
+
+- intent: speed_up
+  examples: |
+    - speed up
+    - go faster
+    - increase speed
+    - please go a bit faster
+    - hey wheelchair, speed up a little
+    - you can move quicker now
+
+- intent: slow_down
+  examples: |
+    - slow down
+    - go slower
+    - reduce speed
+    - can you move a bit slowly?
+    - please slow down, wheelchair
+    - that's too fast, go slower

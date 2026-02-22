@@ -1,0 +1,64 @@
+version: "3.1"
+language: "hi"
+
+pipeline:
+- name: "WhitespaceTokenizer"
+  intent_tokenization_flag: true
+  token_pattern: None
+
+- name: "RegexFeaturizer"
+  use_word_boundaries: true
+  use_lookup_tables: true
+
+- name: "CountVectorsFeaturizer"
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+  lowercase: true
+
+- name: LanguageModelFeaturizer
+  model_name: "bert"
+  model_weights: "bert-base-multilingual-cased"
+
+
+- name: "DIETClassifier"
+  epochs: 100
+  intent_classification: true
+  entity_recognition: true
+  hidden_layers_sizes:
+    text: [256, 128]
+  number_of_transformer_layers: 2
+  constrain_similarities: true
+  batch_strategy: balanced
+  dropout: 0.2
+
+- name: "RegexEntityExtractor"
+  use_lookup_tables: true
+  use_regexes: true
+  use_word_boundaries: true
+
+- name: "EntitySynonymMapper"
+
+- name: "FallbackClassifier"
+  threshold: 0.72
+  ambiguity_threshold: 0.12
+  fallback_action_name: "action_default_fallback"
+
+policies:
+- name: "MemoizationPolicy"
+  max_history: 3
+
+- name: "TEDPolicy"
+  max_history: 5
+  epochs: 100
+  batch_size: [32, 64]
+  learning_rate: 0.001
+  hidden_layers_sizes:
+    text: [128, 128]
+  constrain_similarities: true
+
+- name: "RulePolicy"
+  core_fallback_threshold: 0.6
+  core_fallback_action_name: "action_default_fallback"
+  enable_fallback_prediction: true
+assistant_id: 20250413-205329-central-rail

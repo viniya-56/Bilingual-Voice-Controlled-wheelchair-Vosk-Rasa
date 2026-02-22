@@ -1,0 +1,14 @@
+Vosk_model/# Python virtual environment
+myenv/
+venv/
+
+models/
+results/
+.rasa/cache/
+
+logs/
+__pycache__/
+*.pyc
+
+En_audio_feedback/
+Hi_audio_feedback/

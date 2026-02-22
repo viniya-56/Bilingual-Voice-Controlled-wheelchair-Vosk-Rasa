@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: Trigger emergency stop
+  steps:
+    - intent: stop
+    - action: action_stop
+
+- rule: Fallback rule
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
+
+- rule: Handle out-of-scope questions
+  steps:
+    - intent: out_of_scope
+    - action: action_ask_repeat

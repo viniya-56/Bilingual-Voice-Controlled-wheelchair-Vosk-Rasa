@@ -1,0 +1,152 @@
+version: "3.1"
+nlu:
+- intent: move_forward
+  examples: |
+    - Proceed in the forward direction
+    - Could you please advance straight ahead?
+    - Initiate forward motion now
+    - Go straight for a few seconds
+    - Move onward carefully
+    - I need to progress forward
+    - Forward propulsion please
+    - Begin moving straight
+    - Continue the forward path
+    - Straight-line movement requested
+    - would you mind moving forward?
+    - can we proceed ahead now?
+    - move ahead
+    - step forward now please
+    - start going forward when you're ready
+    - move straight ahead at once
+
+- intent: move_backward
+  examples: |
+    - Reverse your current direction
+    - Please back up slowly
+    - Move in the opposite direction
+    - Retreat backward carefully
+    - Go back about 2 meters
+    - Could you reverse course?
+    - Backward motion required
+    - I need to move in reverse
+    - gp to backward position
+    - Push back gently
+    - please go a few steps back
+    - can you shift backward a bit?
+    - I need you to reverse carefully
+    - go in backward direction
+    - would you mind reversing?
+    - go backwards gently now
+
+- intent: turn_left
+  examples: |
+    - Make a 90-degree left turn
+    - Rotate to the left direction
+    - Adjust course to the left
+    - Pivot leftward now
+    - Bear left at the junction
+    - Take the left fork
+    - Rotate counterclockwise
+    - Swing to your left
+    - Leftward direction please
+    - Change direction to left
+    - veer to the left now
+    - make a sharp left turn
+    - turn left now
+    - adjust your path to the left
+    - can you go to the left?
+    - lean slightly left
+
+- intent: turn_right
+  examples: |
+    - Execute a right turn
+    - Steer in right direction please
+    - Alter course rightward
+    - Pivot to the right
+    - Bear right at the intersection
+    - Take the right path
+    - Rotate clockwise
+    - Swing to your right
+    - Right adjustment
+    - Change heading to right
+    - make a gentle right turn now
+    - move in a rightward direction
+    - slightly shift to the right
+    - curve to the right if possible
+    - align right and keep going
+    - go to the right now
+
+- intent: stop
+  examples: |
+    - Cease all movement immediately
+    - Halt the wheelchair now
+    - dont move
+    - Terminate current motion
+    - Freeze current position
+    - Discontinue movement
+    - Arrest all motion
+    - stand still right now
+    - Maintain current position
+    - Motion termination requested
+    - please freeze all movement now
+    - halt immediately
+    - no further movement, stop now
+    - just stand still
+    - put a stop to everything
+    - stop completely
+
+- intent: speed_up
+  examples: |
+    - Increase your velocity
+    - Augment movement speed
+    - Increase your pace
+    - Boost the current speed
+    - Ramp up your velocity
+    - Move more rapidly
+    - Pick up your speed
+    - Advance more quickly
+    - Speed up your motion
+    - Faster movement please
+    - lets go a little faster
+    - pick up the pace
+    - can you move more quickly now?
+    - I am in a hurry, speed up
+    - accelerate just a bit
+    - go faster please
+
+- intent: slow_down
+  examples: |
+    - Reduce your current speed
+    - Decrease the pace
+    - Diminish your velocity
+    - Moderate your pace
+    - Lower the movement speed
+    - Move more slowly
+    - Take it slower now
+    - Decrease momentum
+    - Reduce the speed of the wheelchair
+    - Go slower please
+    - decrease the speed
+    - lower the pace
+    - dont go fast
+    - take it slow now
+    - no rush, slow down please
+    - please slow your pace
+
+- intent: out_of_scope
+  examples: |
+    - What's the weather like today?
+    - Tell me a joke
+    - How tall is Mount Everest?
+    - Who won the cricket match yesterday?
+    - Can you book me a taxi?
+    - What is the capital of France?
+    - How do I cook pasta?
+    - how are you
+    - Translate this sentence into Spanish
+    - What time is it now?
+    - Read me the news headlines
+    - Where is the nearest coffee shop?
+    - Give me glass of water
+    - What movies are playing tonight?
+    - Set a reminder for tomorrow

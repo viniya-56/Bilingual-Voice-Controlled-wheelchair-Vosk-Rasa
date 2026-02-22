@@ -1,0 +1,28 @@
+version: "3.1"
+
+intents:
+  - move_forward       # आगे बढ़ो
+  - move_backward      # पीछे जाओ
+  - turn_left          # बाएं मुड़ो
+  - turn_right         # दाएं मुड़ो
+  - stop               # रुक जाओ / रुकिए
+  - speed_up           # गति बढ़ाओ
+  - slow_down          # गति घटाओ / धीरे चलो
+  - nlu_fallback       # फ़ॉलबैक के लिए
+  - out_of_scope       # सीमा के बाहर प्रश्न
+
+entities:
+  - distance           # दूरी
+  - angle              # कोण
+  - speed              # गति
+
+actions:
+  - action_move_forward         # आगे बढ़ने की क्रिया
+  - action_move_backward        # पीछे जाने की क्रिया
+  - action_turn_left            # बाएं मुड़ने की क्रिया
+  - action_turn_right           # दाएं मुड़ने की क्रिया
+  - action_increase_speed       # गति बढ़ाने की क्रिया
+  - action_decrease_speed       # गति घटाने की क्रिया
+  - action_stop                 # रुकने की क्रिया
+  - action_default_fallback     # डिफ़ॉल्ट फॉलबैक क्रिया
+  - action_ask_repeat           # दोहराने के लिए पूछे जाने वाली क्रिया

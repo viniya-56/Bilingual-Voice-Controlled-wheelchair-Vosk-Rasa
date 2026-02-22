@@ -1,0 +1,10 @@
+{
+  "0": "move_backward",
+  "1": "move_forward",
+  "2": "out_of_scope",
+  "3": "slow_down",
+  "4": "speed_up",
+  "5": "stop",
+  "6": "turn_left",
+  "7": "turn_right"
+}

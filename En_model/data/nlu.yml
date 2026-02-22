@@ -1,0 +1,263 @@
+version: "3.1"
+nlu:
+- intent: move_forward
+  examples: |
+    - Move forward [five meters](distance)
+    - Go straight ahead [two meters](distance)
+    - Proceed forward [ten feet](distance)
+    - Keep going forward [ten cm](distance)
+    - Continue moving forward by [twenty meters](distance)
+    - Please move forward [ten meters](distance)
+    - Move ahead
+    - Could you go straight forward
+    - move forward now
+    - move onward
+    - Step forward some steps
+    - Start moving ahead
+    - Go on straight path
+    - I want to go ahead
+
+- intent: move_backward
+  examples: |
+    - Move backward [five meters](distance)
+    - Go back [two feet](distance)
+    - Step back a bit
+    - Reverse by [three meters](distance)
+    - Move in reverse [one meter](distance)
+    - Go backwards [ten feet](distance)
+    - Could you reverse by [five meters](distance)?
+    - Please back up
+    - Reverse direction [five meters](distance)
+    - Backward movement please
+    - reverse
+    - I want to move in reverse direction
+    - Move wheelchair in backward direction
+    - keep reversing
+
+- intent: turn_left
+  examples: |
+    - Turn left by [forty-five degrees](angle)
+    - Take a left turn
+    - Move left side
+    - Rotate left [twenty degrees](angle)
+    - Shift left by [five degrees](angle)
+    - Could you turn left by [ninety degrees](angle)
+    - Left rotation [forty-five degrees](angle)
+    - Left side please
+    - left turn now
+    - rotate couterclockwise
+    - keep turning anticlockwise
+    - turn to the left direction please
+    - face left by [thirty degrees](angle) angle
+
+- intent: turn_right
+  examples: |
+    - Turn right by [forty-five degrees](angle)
+    - Take a right turn
+    - Move right side
+    - Rotate right [one hundred eighty degrees](angle)
+    - Shift right by [five degrees](angle)
+    - Could you turn right by [ninety degrees](angle)
+    - right rotation [forty-five degrees](angle)
+    - right side please
+    - right turn now
+    - rotate clockwise
+    - turn to the right direction please
+    - face right by [thirty degrees](angle) angle
+
+- intent: stop
+  examples: |
+    - Stop
+    - Halt immediately
+    - Emergency stop 
+    - stop now
+    - halt
+    - Hold on
+    - Stand by for now
+    - Pause movement
+    - Do not move
+    - Freeze
+    - Stop right there
+    - Stop the chair
+    - no movement
+    - don't move
+    - please stop
+    - stop moving now
+    - do not proceed
+    - abort movement
+    - come to a stop
+    - stop all motion
+    - remain stationary
+    - brake
+    - maintain current position
+
+- intent: speed_up
+  examples: |
+    - Speed up
+    - Go faster please
+    - Increase speed to [seventy percent](speed)
+    - Accelerate by [twenty percent](speed)
+    - Boost speed to [hundred percent](speed)
+    - Speed up to [fifty percent](speed)
+    - drive faster
+    - can you speed up a little?
+    - boost velocity
+    - Go quicker
+    - Accelerate faster
+    - faster 
+    - can you move more quickly
+    - speed up now
+
+- intent: slow_down
+  examples: |
+    - Reduce speed to [fifty percent](speed)
+    - Slow down
+    - decrease speed to [thirty percent](speed)
+    - Decrease speed to low
+    - Reduce pace
+    - Move slower
+    - Go slower
+    - Slow it down
+    - Reduce your speed to low
+    - Decrease velocity
+    - take it slower
+    - can you please reduce speed to [twenty percent](speed)
+
+- intent: out_of_scope
+  examples: |
+    - Can you help me order a pizza?
+    - I'd like to know the weather today.
+    - Could you tell me a joke?
+    - I want to listen to music.
+    - Help me find a nearby restaurant.
+    - What time is it?
+    - how are you?
+    - tell me your name?
+    - give me a glass of water
+    - where is the garden
+
+synonyms:
+  - synonym: forward
+    examples:
+      - ahead
+      - onward
+      - front
+  
+  - synonym: backward
+    examples:
+      - reverse
+      - back
+  
+  - synonym: left
+    examples:
+      - leftward
+      - anticlockwise
+      - counterclockwise
+
+  - synonym: right
+    examples:
+      - rightward
+      - clockwise
+
+  - synonym: percent
+    examples: |
+      - percentage
+
+  - synonym: meter
+    examples: |
+      - m
+      - meters
+      - metre
+
+  - synonym: degree
+    examples: |
+      - degrees
+      - deg
+
+  - lookup: distance_units
+    examples: |
+      - meter
+      - meter
+      - meters
+      - m
+      - centimetre
+      - centimeter
+      - cm
+      - foot
+      - feet
+      - ft
+      - inch
+      - inches
+
+  - lookup: angle_units
+    examples: |
+      - degree
+      - degrees
+      - deg
+
+  - lookup: speed_units
+    examples: |
+      - percent
+      - percentage
+      - speed
+
+  - lookup: speed
+    examples: |
+      - ten percent
+      - twenty percent
+      - thirty percent
+      - forty percent
+      - fifty percent
+      - sixty percent
+      - seventy percent
+      - eighty percent
+      - ninety percent
+      - one hundred percent
+
+  - lookup: distance
+    examples: |
+      - one meter
+      - two meters
+      - five meters
+      - ten meters
+      - twenty meters
+      - fifty meters
+      - one hundred meters
+      - one m
+      - five m
+      - one hundred m
+      - ten feet
+      - twenty feet
+      - thirty ft
+      - fifty cm
+      - ten centimeters
+      - twelve inches
+      - one inch
+      - move five meters
+      - go two meters
+      - move three feet
+
+  - lookup: angle
+    examples: |
+      - ten degrees
+      - twenty degrees
+      - forty-five degrees
+      - ninety degrees
+      - one hundred eighty degrees
+      - two hundred seventy degrees
+      - three hundred sixty degrees
+      - ten degree
+      - forty-five degree
+      - ninety°
+      - turn ninety degrees
+      - rotate one hundred eighty degrees
+      - spin three hundred sixty degree
+
+  - regex: distance
+    pattern: \b(\d+|[a-z]+)\s*(meters?|m|feet?|ft|centimeters?|cm|inches?|inch|in)\b
+
+  - regex: angle
+    pattern: \b(\d+|[a-z]+)\s*(degrees?|°|deg)\b
+
+  - regex: speed
+    pattern: \b(\d+|[a-z]+)\s*(percent|%|speed)\b

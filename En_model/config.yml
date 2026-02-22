@@ -1,0 +1,87 @@
+version: "3.1"
+
+language: en
+
+pipeline:
+- name: SpacyNLP
+  model: en_core_web_md
+
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+
+- name: RegexFeaturizer
+
+- name: CountVectorsFeaturizer
+  analyzer: word
+  min_ngram: 1
+  max_ngram: 2
+  additional_vocabulary:
+  - "forward"
+  - "backward"
+  - "left"
+  - "right"
+  - "meters"
+  - "degrees"
+  - "percent"
+  - "speed"
+  - "stop"
+  - "emergency"
+  - "brake"
+  - "faster"
+  - "slower"
+  - "quickly"
+
+- name: RegexEntityExtractor
+  case_sensitive: false
+  use_lookup_tables: true
+  use_regexes: true
+  use_word_boundaries: true
+  patterns:
+    - name: "emergency_command"
+      pattern: "\\b(stop\\s*now|halt|emergency|brake|shut\\s*down)\\b"
+    - name: "distance"
+      pattern: "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*(meters|m|feet|ft|centimeters|cm)\\b"
+    - name: "angle"
+      pattern: "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*(degrees|deg|°)\\b"
+    - name: "speed"
+      pattern: "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*(percent|%|speed|kmph|mph)\\b"
+
+- name: DIETClassifier
+  epochs: 150
+  intent_classification: true
+  entity_recognition: true
+  hidden_layers_sizes:
+    text: [256, 128]
+  number_of_transformer_layers: 2
+  constrain_similarities: true
+  batch_strategy: balanced
+
+- name: EntitySynonymMapper
+
+- name: FallbackClassifier
+  threshold: 0.75
+  ambiguity_threshold: 0.1
+  fallback_action_name: "action_default_fallback"
+
+policies:
+- name: MemoizationPolicy
+  max_history: 3
+
+
+- name: TEDPolicy
+  max_history: 5
+  epochs: 150
+  batch_size: [16, 32] 
+  learning_rate: 0.001
+  hidden_layers_sizes:
+    text: [128, 128]
+  constrain_similarities: true
+  
+
+
+- name: RulePolicy
+  core_fallback_threshold: 0.75
+  core_fallback_action_name: "action_stop"
+  enable_fallback_prediction: true
+
+assistant_id: 20250412-191327-coped-bumper

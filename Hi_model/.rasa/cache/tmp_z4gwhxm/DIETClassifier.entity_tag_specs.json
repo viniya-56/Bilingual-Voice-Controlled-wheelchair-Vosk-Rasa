@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-angle",
+      "2": "I-angle",
+      "3": "L-angle",
+      "4": "U-angle",
+      "5": "B-distance",
+      "6": "I-distance",
+      "7": "L-distance",
+      "8": "U-distance",
+      "9": "B-speed",
+      "10": "I-speed",
+      "11": "L-speed",
+      "12": "U-speed",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-angle": 1,
+      "I-angle": 2,
+      "L-angle": 3,
+      "U-angle": 4,
+      "B-distance": 5,
+      "I-distance": 6,
+      "L-distance": 7,
+      "U-distance": 8,
+      "B-speed": 9,
+      "I-speed": 10,
+      "L-speed": 11,
+      "U-speed": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

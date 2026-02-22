@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+# --- Safety Critical Stories (Highest Priority) ---
+- story: Emergency stop
+  steps:
+  - intent: stop
+  - action: action_stop  # Hardware-level stop
+
+# --- Movement Commands ---
+- story: Move forward
+  steps:
+  - intent: move_forward
+    entities:
+    - distance
+  - action: action_move_forward
+
+- story: Move backward
+  steps:
+  - intent: move_backward
+    entities:
+    - distance
+  - action: action_move_backward
+
+- story: Turn left
+  steps:
+  - intent: turn_left
+    entities:
+    - angle
+  - action: action_turn_left
+
+- story: Turn right
+  steps:
+  - intent: turn_right
+    entities:
+    - angle
+  - action: action_turn_right
+
+# --- Speed Control ---
+- story: Increase speed
+  steps:
+  - intent: speed_up
+    entities:
+    - speed
+  - action: action_increase_speed
+
+- story: Decrease speed
+  steps:
+  - intent: slow_down
+    entities:
+    - speed
+  - action: action_decrease_speed
+
+# --- System Interaction ---
+- story: Handle fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: Out of scope handling
+  steps:
+  - intent: out_of_scope
+  - action: action_ask_repeat

@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+# --- सुरक्षा से जुड़ी कहानियाँ (सर्वोच्च प्राथमिकता) ---
+- story: आपातकालीन रुकावट
+  steps:
+  - intent: stop
+  - action: action_stop  # हार्डवेयर स्तर पर रुकने की क्रिया
+
+# --- गति और दिशा संबंधित आदेश ---
+- story: आगे बढ़ना
+  steps:
+  - intent: move_forward
+    entities:
+    - distance
+  - action: action_move_forward
+
+- story: पीछे जाना
+  steps:
+  - intent: move_backward
+    entities:
+    - distance
+  - action: action_move_backward
+
+- story: बाएं मुड़ना
+  steps:
+  - intent: turn_left
+    entities:
+    - angle
+  - action: action_turn_left
+
+- story: दाएं मुड़ना
+  steps:
+  - intent: turn_right
+    entities:
+    - angle
+  - action: action_turn_right
+
+# --- गति नियंत्रण ---
+- story: गति बढ़ाना
+  steps:
+  - intent: speed_up
+    entities:
+    - speed
+  - action: action_increase_speed
+
+- story: गति घटाना
+  steps:
+  - intent: slow_down
+    entities:
+    - speed
+  - action: action_decrease_speed
+
+# --- सिस्टम से संवाद ---
+- story: समझ में न आने वाली बात पर प्रतिक्रिया
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: सीमा के बाहर के प्रश्नों का उत्तर
+  steps:
+  - intent: out_of_scope
+  - action: action_ask_repeat

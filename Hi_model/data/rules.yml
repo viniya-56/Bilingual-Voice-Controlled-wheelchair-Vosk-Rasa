@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: आपातकालीन स्थिति में रुकने का आदेश
+  steps:
+    - intent: stop
+    - action: action_stop
+
+- rule: जब कुछ समझ में न आए (Fallback नियम)
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
+
+- rule: बाहर के दायरे के प्रश्नों का उत्तर देना
+  steps:
+    - intent: out_of_scope
+    - action: action_ask_repeat

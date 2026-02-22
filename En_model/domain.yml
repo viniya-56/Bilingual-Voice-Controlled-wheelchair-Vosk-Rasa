@@ -1,0 +1,28 @@
+version: "3.1"
+
+intents:
+  - move_forward
+  - move_backward
+  - turn_left
+  - turn_right
+  - stop
+  - speed_up
+  - slow_down
+  - nlu_fallback
+  - out_of_scope
+
+entities:
+  - distance
+  - angle
+  - speed
+
+actions:
+  - action_move_forward
+  - action_move_backward
+  - action_turn_left
+  - action_turn_right
+  - action_increase_speed
+  - action_decrease_speed
+  - action_stop
+  - action_default_fallback
+  - action_ask_repeat
