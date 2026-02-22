@@ -29,6 +29,7 @@ This project integrates:
 ---
 
 ## 📂 Project Structure
+<pre>
 Bilingual-Voice-Controlled-Wheelchair-Vosk-Rasa/
 │
 ├── En_model/
@@ -54,8 +55,7 @@ Bilingual-Voice-Controlled-Wheelchair-Vosk-Rasa/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
-
+</pre>
 ---
 
 ## ⚙️ Requirements
@@ -70,13 +70,14 @@ Bilingual-Voice-Controlled-Wheelchair-Vosk-Rasa/
 - Joystick module
 - Relay module
 
-### Python Libraries
+## Python Libraries
 
-```bash
+bash
 pip install vosk rasa pygame pyaudio lgpio adafruit-circuitpython-ads1x15 luma.oled requests
 
 
-## 🚀 How to Run
+##  How to Run
+
 - 1️⃣ Train Rasa Models
 cd En_model
 rasa train
